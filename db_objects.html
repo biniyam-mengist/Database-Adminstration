@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+            padding:0px;
+
+        }
+        #header{
+            background-color: #0C8FAA;
+            z-index: 100;
+            width: 100%;
+            height: 40px;
+            box-shadow: rgba(0,0,0,0.2) 0px 4px 8px;
+        }
+        #main-container{
+            width:100%;
+            display: flex;
+            flex-direction: row;         
+
+
+        }
+        #nav-bar{
+            position: fixed;
+            top:45px;
+            width:200px;
+            height: 630px;
+            border-right: 3px solid #0C8FAA;
+            margin: 12px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+
+        .nav-titles{
+            /* border: 1px solid red; */
+            padding:5px;
+            font-weight: bold;    
+            color: #0C8FAA;        
+        }
+        .nav-items{
+            /* border: 1px solid red; */
+            padding:5px;
+            margin: 2px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: #707070;
+
+        }
+        a:hover{
+            color: #0C8FAA;
+        }
+        #card-container{
+            /* border: 1px solid red; */
+            position: absolute;
+            left:205px;
+            top:50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .cards{
+            width:80%;
+            background-color: white;
+            box-shadow: rgba(0,0,0,0.2) 4px 4px 8px;
+            margin: 12px;
+            border-top: 8px solid #0C8FAA; 
+            border-left: 1px solid #0C8FAA;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        .title{
+            height: 30px;
+            background-color: #0C8FAA;
+            width: 200px;
+            text-align: center;
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+        
+        }
+        .detail-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 10px;
+        }
+        .description{
+            color: #636363;
+            margin:5px 0px;
+            width: 100%;
+            padding: 5px 5px;
+            box-sizing: border-box;
+            font-size: 15px;
+            text-indent: 10px;
+
+        }
+        .code{
+            background-color:#DBDBDB ;
+            margin:5px 0px;
+            width: 100%;
+            padding: 10px 5px;
+            box-sizing: border-box;
+        }
+        .description-title{
+            text-emphasis: stro;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="header">
+
+    </div>
+    <div id ="main-container">
+        <div id="nav-bar">
+            <div class="nav-titles">Database Objects</div>
+            <div class="nav-items"><a href="#table">Table</a></div>
+            <div class="nav-items"><a href="#index">Index</a></div>
+            <div class="nav-items"><a href="#view">View</a></div>
+            <div class="nav-items"><a href="#cursor">Cursor</a></div>
+            <div class="nav-items"><a href="#record">Record</a></div>
+            <div class="nav-items"><a href="#package">Package</a></div>
+            <div class="nav-items"><a href="#procedure">Procedure</a></div>
+            <div class="nav-items"><a href="#function">Function</a></div>
+            <div class="nav-items"><a href="#object">Object</a></div>
+            <div class="nav-items"><a href="#link">Link</a></div>
+            <div class="nav-items"><a href="#sequence">Sequence</a></div>
+            <div class="nav-items"><a href="#trigger">Trigger</a></div>
+            <div class="nav-titles">Constraints</div>
+            <div class="nav-items"><a href="#primary_key">Primary Key</a></div>
+            <div class="nav-items"><a href="#unique_key">Unique Key</a></div>
+            <div class="nav-items"><a href="#not_null">Not Null</a></div>
+            <div class="nav-items"><a href="#check">Check</a></div>
+            <div class="nav-items"><a href="#foreign_key">Foreign Key</a></div>
+        </div>
+        <div id="card-container">
+            
+            <div class="cards" id="table">
+                <div class="title">Table</div>
+                <div class="detail-container">
+                    <div class="description"> <b>Description: </b>A table is a collection of related data held in a structured format within a database. It consists of columns, and rows.A table has a specified number of columns, but can have any number of rows.Each row is identified by one or more values appearing in a particular column subset.</div>
+                    <div class="code"><code>CREATE TABLE table_name ( column1 datatype, column2 datatype, column3 datatype, .... );</code>></div>
+                    <div class="description"><b>Code Description: </b>here</div>
+                </div>                
+            </div>
+
+            <div class="cards" id="index">
+                    <div class="title">Index</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. An index is a copy of selected columns of data from a table that can be searched very efficiently that also includes a low-level disk block address or direct link to the complete row of data it was copied from.</div>
+                        <div class="code"><code>CREATE INDEX index_name
+                                ON table_name (column1, column2, ...);</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="view">
+                        <div class="title">View</div>
+                        <div class="detail-container">
+                            <div class="description"> <b>Description: </b>In a database, a view is the result set of a stored query on the data, which the database users can query just as they would in a persistent database collection object. This pre-established query command is kept in the database dictionary. Unlike ordinary base tables in a relational database, a view does not form part of the physical schema: as a result set, it is a virtual table computed or collated dynamically from data in the database when access to that view is requested. </div>
+                            <div class="code"><code>CREATE VIEW view_name AS
+                                    SELECT column1, column2, ...
+                                    FROM table_name
+                                    WHERE condition;</code></div>
+                            <div class="description"><b>Code Description: </b>here</div>
+                        </div>                
+            </div>
+
+            <div class="cards" id="cursor">
+                    <div class="title">Cursor</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A database cursor can be thought of as a pointer to a specific row within a query result.  The pointer can be moved from one row to the next. Depending on the type of cursor, you may be even able to move it to the previous row.if a SQL result is like a bag, you get to hold a whole bunch of rows at once, but not any of them individually; whereas, a cursor is like a pair of tweezers.  With it, you can reach into the bag and grab a row, and then move onto the next.</div>
+                        <div class="code"><code>CURSOR cursor_name IS select_statement; </code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="record">
+                    <div class="title">Record</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>In database management systems, Records are composed of fields, each of which contains one item of information. A set of records constitutes a file. For example, a personnel file might contain records that have three fields: a name field, an address field, and a phone number field.In relational database management systems, records are called tuples.</div>
+                        <div class="code"><code>INSERT INTO table_name (column_name,...) VALUES (value,...);</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+
+            <div class="cards" id="package">
+                    <div class="title">Package</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>In relational database management systems, packages encapsulate related procedures, functions, and associated cursors and variables together as a unit in the database. Packages usually have two parts, a specification and a body. The specification is the interface with your applications; it declares the types,variables, constants, exceptions, cursors, and subprograms available for use. The body fully defines cursors and subprograms, and so implements the specification.</div>
+                        <div class="code"><code>CREATE PACKAGE package_name AS 
+                                PROCEDURE sub_program(element declaratoion); 
+                             END package_name;</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="procedure">
+                    <div class="title">Procedure</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A stored procedure (or Procedure) is a subroutine available to applications that access a relational database management system (RDBMS). Such procedures are stored in the database data dictionary.</div>
+                        <div class="code"><code>CREATE [OR REPLACE] PROCEDURE procedure_name 
+                                [(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+                                {IS | AS} 
+                                BEGIN 
+                                  [ procedure_body ] 
+                                END procedure_name; </code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+
+            <div class="cards" id="function">
+                    <div class="title">Function</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>In relational database management systems, a user-defined function provides a mechanism for extending the functionality of the database server by adding a function, that can be evaluated in standard query language (usually SQL) statements.</div>
+                        <div class="code"><code>CREATE [OR REPLACE] FUNCTION function_name 
+                                [(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+                                RETURN return_datatype 
+                                {IS | AS} 
+                                BEGIN 
+                                   [] function_body ] 
+                                END [function_name];</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+           
+            <div class="cards" id="object">
+                    <div class="title">Object</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A database object in a relational database is a data structure used to either store or reference data.When a database object is created, a new object type cannot be created because all the various object types created are restricted by the very nature, or source code, of the relational database model being used, such as Oracle, SQL Server or Access. What is being created is instances of the objects, such as a new table, an index on that table or a view on the same table</div>
+                        <div class="code"><code>CREATE OR REPLACE TYPE address AS OBJECT 
+                                (house_no varchar2(10), 
+                                 street varchar2(30), 
+                                 city varchar2(20), 
+                                 state varchar2(10), 
+                                 pincode varchar2(10) 
+                                ); </code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="link">
+                    <div class="title">Link</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A database link is a schema object in one database that enables you to access objects on another database.</div>
+                        <div class="code"><code>CREATE database_link_type DATABASE LINK domain USING remote_database_name</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="sequence">
+                    <div class="title">Sequence</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>Sequence is a feature supported by some database systems to produce unique values on demand. Some DBMS like MySQL supports AUTO_INCREMENT in place of Sequence.AUTO_INCREMENT is applied on columns, Sequence is also some what similar to AUTO_INCREMENT but it has some additional features too.</div>
+                        <div class="code"><code>CREATE SEQUENCE sequence_name START WITH init_value INCREMENT BY increment_value MAXVALUE max_value cycle;</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+
+            <div class="cards" id="trigger">
+                    <div class="title">Trigger</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A database trigger is procedural code that is automatically executed in response to certain events on a particular table or view in a database.The trigger is mostly used for maintaining the integrity of the information on the database.</div>
+                        <div class="code"><code>CREATE [OR REPLACE ] TRIGGER trigger_name  
+                                {BEFORE | AFTER | INSTEAD OF }  
+                                {INSERT [OR] | UPDATE [OR] | DELETE}  
+                                [OF col_name]  
+                                ON table_name  
+                                [REFERENCING OLD AS o NEW AS n]  
+                                [FOR EACH ROW]  
+                                WHEN (condition)   
+                                DECLARE 
+                                   Declaration-statements 
+                                BEGIN  
+                                   Executable-statements 
+                                EXCEPTION 
+                                   Exception-handling-statements 
+                                END; </code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="primary_key">
+                    <div class="title">Primary Key</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>In the relational model of databases, a primary key is a specific choice of a minimal set of attributes (columns) that uniquely specify a row in a table.Informally, a primary key is "which attributes identify a record", and in simple cases are simply a single attribute: a unique id. </div>
+                        <div class="code"><code>CREATE TABLE table_name (
+                                column1 datatype, column2 datatype, column3 datatype,
+                                PRIMARY KEY (colunm_1)
+                            );</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="unique_key">
+                    <div class="title">Unique Key</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b> a unique key (also known as a candidate key) of a relation is a minimal superkey for that relation; that is, a set of attributes such that: the relation does not have two distinct tuples (i.e. rows or records in common database language) with the same values for these attributes (which means that the set of attributes is a superkey) there is no proper subset of these attributes for which holds (which means that the set is minimal).</div>
+                        <div class="code"><code>CREATE TABLE table_name (
+                            column1 datatype UNIQUE, column2 datatype, column3 datatype
+                        );</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="not_null">
+                    <div class="title">Not Null</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>The not-null constraint is a restriction placed on a column in a relational database table. It enforces the condition that, in that column, every row of data must contain a value - it cannot be left blank during insert or update operations. If this column is left blank,  this will produce an error message and the entire insert or update operation will fail.</div>
+                        <div class="code"><code>CREATE TABLE table_name (
+                            column1 datatype NOT NULL, column2 datatype, column3 datatype
+                        );</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="check">
+                    <div class="title">Check</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>A check constraint is a type of integrity constraint in SQL which specifies a requirement that must be met by each row in a database table. The constraint must be a predicate. It can refer to a single column, or multiple columns of the table. The result of the predicate can be either TRUE, FALSE, or UNKNOWN, depending on the presence of NULLs. If the predicate evaluates to UNKNOWN,  then the constraint is not violated and the row can be inserted or updated in the table.</div>
+                        <div class="code"><code>CREATE TABLE table_name (
+                            column1 datatype NOT NULL, column2 datatype, column3 datatype,
+                            CHECK (predicate)
+                        );</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+
+            <div class="cards" id="foreign_key">
+                    <div class="title">Foreign Key</div>
+                    <div class="detail-container">
+                        <div class="description"> <b>Description: </b>In the context of relational databases, a foreign key is a field (or collection of fields) in one table that uniquely identifies a row of another table or the same table.In simpler words, the foreign key is defined in a second table, but it refers to the primary key or a unique key in the first table. For example, a table called Employees has a primary key called employee_id. Another table called Employee Details has a foreign key which references employee_id in order to uniquely identify the relationship between the two tables.</div>
+                        <div class="code"><code>CREATE TABLE Orders (
+                            OrderID int NOT NULL,
+                            OrderNumber int NOT NULL,
+                            PersonID int,
+                            PRIMARY KEY (OrderID),
+                            FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+                        )</code></div>
+                        <div class="description"><b>Code Description: </b>here</div>
+                    </div>                
+            </div>
+    
+        </div>
+    </div>        
+</body>
+<script>
+
+
+</script>
+</html>
