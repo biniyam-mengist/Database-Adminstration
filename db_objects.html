@@ -9,7 +9,6 @@
         body{
             margin:0px;
             padding:0px;
-
         }
         #header{
             background-color: #0C8FAA;
@@ -17,13 +16,21 @@
             width: 100%;
             height: 40px;
             box-shadow: rgba(0,0,0,0.2) 0px 4px 8px;
+            display: flex;
+            flex-direction: row;    
+            justify-content: center;
+            align-items: center;
+        }
+        #header-title{
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            font-size: 120%;
         }
         #main-container{
             width:100%;
             display: flex;
             flex-direction: row;         
-
-
         }
         #nav-bar{
             position: fixed;
@@ -35,38 +42,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-
         .nav-titles{
-            /* border: 1px solid red; */
             padding:5px;
             font-weight: bold;    
             color: #0C8FAA;        
         }
         .nav-items{
-            /* border: 1px solid red; */
             padding:5px;
             margin: 2px;
-            
         }
         a{
             text-decoration: none;
             color: #707070;
-
         }
         a:hover{
             color: #0C8FAA;
         }
         #card-container{
-            /* border: 1px solid red; */
             position: absolute;
             left:205px;
             top:50px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            
         }
         .cards{
             width:80%;
@@ -85,7 +85,6 @@
             color: white;
             font-size: 19px;
             font-weight: bold;
-        
         }
         .detail-container{
             display: flex;
@@ -102,7 +101,6 @@
             box-sizing: border-box;
             font-size: 15px;
             text-indent: 10px;
-
         }
         .code{
             background-color:#DBDBDB ;
@@ -120,7 +118,9 @@
 </head>
 <body>
     <div id="header">
-
+            <div id="header-title">
+                Database Objects
+            </div>
     </div>
     <div id ="main-container">
         <div id="nav-bar">
@@ -151,7 +151,7 @@
                 <div class="detail-container">
                     <div class="description"> <b>Description: </b>A table is a collection of related data held in a structured format within a database. It consists of columns, and rows.A table has a specified number of columns, but can have any number of rows.Each row is identified by one or more values appearing in a particular column subset.</div>
                     <div class="code"><code>CREATE TABLE table_name ( column1 datatype, column2 datatype, column3 datatype, .... );</code>></div>
-                    <div class="description"><b>Code Description: </b>here</div>
+                    <div class="description"><b>Code Description: </b>This sql query creates a table with the specified table name containing the specified attributes as a column.</div>
                 </div>                
             </div>
 
@@ -161,7 +161,7 @@
                         <div class="description"> <b>Description: </b>A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. An index is a copy of selected columns of data from a table that can be searched very efficiently that also includes a low-level disk block address or direct link to the complete row of data it was copied from.</div>
                         <div class="code"><code>CREATE INDEX index_name
                                 ON table_name (column1, column2, ...);</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates an index, index_name, on the specified columns inside the table, table_name</div>
                     </div>                
             </div>
 
@@ -173,7 +173,7 @@
                                     SELECT column1, column2, ...
                                     FROM table_name
                                     WHERE condition;</code></div>
-                            <div class="description"><b>Code Description: </b>here</div>
+                            <div class="description"><b>Code Description: </b>This query creates a view, view_name, based on the select query specified to it.</div>
                         </div>                
             </div>
 
@@ -182,7 +182,7 @@
                     <div class="detail-container">
                         <div class="description"> <b>Description: </b>A database cursor can be thought of as a pointer to a specific row within a query result.  The pointer can be moved from one row to the next. Depending on the type of cursor, you may be even able to move it to the previous row.if a SQL result is like a bag, you get to hold a whole bunch of rows at once, but not any of them individually; whereas, a cursor is like a pair of tweezers.  With it, you can reach into the bag and grab a row, and then move onto the next.</div>
                         <div class="code"><code>CURSOR cursor_name IS select_statement; </code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a cursor for the value returned from the select statement given.</div>
                     </div>                
             </div>
 
@@ -191,7 +191,7 @@
                     <div class="detail-container">
                         <div class="description"> <b>Description: </b>In database management systems, Records are composed of fields, each of which contains one item of information. A set of records constitutes a file. For example, a personnel file might contain records that have three fields: a name field, an address field, and a phone number field.In relational database management systems, records are called tuples.</div>
                         <div class="code"><code>INSERT INTO table_name (column_name,...) VALUES (value,...);</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a record (row) in the specified table containing the specified values. </div>
                     </div>                
             </div>
 
@@ -203,7 +203,7 @@
                         <div class="code"><code>CREATE PACKAGE package_name AS 
                                 PROCEDURE sub_program(element declaratoion); 
                              END package_name;</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a package which has its logic between the AS and END.</div>
                     </div>                
             </div>
 
@@ -217,7 +217,7 @@
                                 BEGIN 
                                   [ procedure_body ] 
                                 END procedure_name; </code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This statement creates a procedure procedure_name which has parameters specified as parameter_name and its logic body inside teh BEGIN and END.</div>
                     </div>                
             </div>
 
@@ -233,7 +233,7 @@
                                 BEGIN 
                                    [] function_body ] 
                                 END [function_name];</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a user-defined function function_name having parameters parameter_name which returns a data based on the operation specified in the IS and END.</div>
                     </div>                
             </div>
 
@@ -249,7 +249,7 @@
                                  state varchar2(10), 
                                  pincode varchar2(10) 
                                 ); </code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates an object based on the specified attribute.</div>
                     </div>                
             </div>
 
@@ -258,7 +258,7 @@
                     <div class="detail-container">
                         <div class="description"> <b>Description: </b>A database link is a schema object in one database that enables you to access objects on another database.</div>
                         <div class="code"><code>CREATE database_link_type DATABASE LINK domain USING remote_database_name</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a database link between the specified database and the remote_database_name.</div>
                     </div>                
             </div>
 
@@ -267,7 +267,7 @@
                     <div class="detail-container">
                         <div class="description"> <b>Description: </b>Sequence is a feature supported by some database systems to produce unique values on demand. Some DBMS like MySQL supports AUTO_INCREMENT in place of Sequence.AUTO_INCREMENT is applied on columns, Sequence is also some what similar to AUTO_INCREMENT but it has some additional features too.</div>
                         <div class="code"><code>CREATE SEQUENCE sequence_name START WITH init_value INCREMENT BY increment_value MAXVALUE max_value cycle;</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a sequence, sequence_name, with the specified initial values, which increments by the increment_value until it reaches the maximum value.</div>
                     </div>                
             </div>
 
@@ -291,7 +291,7 @@
                                 EXCEPTION 
                                    Exception-handling-statements 
                                 END; </code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>This query creates a trigger, trigger_name, which is invoked by the condition given.</div>
                     </div>                
             </div>
 
@@ -303,7 +303,7 @@
                                 column1 datatype, column2 datatype, column3 datatype,
                                 PRIMARY KEY (colunm_1)
                             );</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>The above SQL creates a PRIMARY KEY on the "column_1" column when the "table_name" table is created:</div>
                     </div>                
             </div>
 
@@ -314,7 +314,7 @@
                         <div class="code"><code>CREATE TABLE table_name (
                             column1 datatype UNIQUE, column2 datatype, column3 datatype
                         );</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>The above SQL creates a UNIQUE constraint on the "column1" column when the "table_name" table is created:</div>
                     </div>                
             </div>
 
@@ -325,7 +325,7 @@
                         <div class="code"><code>CREATE TABLE table_name (
                             column1 datatype NOT NULL, column2 datatype, column3 datatype
                         );</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>The above SQL ensures that the "column1", will NOT accept NULL values when the "table_name" table is created:</div>
                     </div>                
             </div>
 
@@ -337,7 +337,7 @@
                             column1 datatype NOT NULL, column2 datatype, column3 datatype,
                             CHECK (predicate)
                         );</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>The above SQL creates a CHECK constraint on the column specified inside the predicate when the "table_name" table is created. The CHECK constraint ensures that the predicate is fullfilled. </div>
                     </div>                
             </div>
 
@@ -352,7 +352,7 @@
                             PRIMARY KEY (OrderID),
                             FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
                         )</code></div>
-                        <div class="description"><b>Code Description: </b>here</div>
+                        <div class="description"><b>Code Description: </b>The above SQL creates a FOREIGN KEY on the "PersonID" column when the "Orders" table is created:</div>
                     </div>                
             </div>
     
